@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Cards from '../components/Cards';
 import CardsTwo from '../components/Cards2';
+import Cards3 from '../components/Cards3';
+import Bloc5Home from '../components/Bloc5';
 
 export default function Home() {
   const items = [
@@ -38,9 +40,39 @@ export default function Home() {
       id : 6
     },
     {
-      src : 'img/ico8.svg',
+      src : 'img/ico9.svg',
       title : 'Emploi et formation professionnelle',
       id : 7
+    }
+  ]
+  const items3 = [
+    {
+      src : 'img/ico11.svg',
+      title : 'Trouver sa convention collective',
+      contenu : 'Recherchez une convention collective par Entreprise, SIRET, Nom ou numéro IDCC.',
+      bouton : 'Consulter',
+      id : 8
+    },
+    {
+      src : 'img/ico12.svg',
+      title : 'Préavis de démission',
+      contenu : 'Estimez la duréer de préavis à respecter en cas de démission',
+      bouton : 'Calculer',
+      id : 9
+    },
+    {
+      src : 'img/ico13.svg',
+      title : 'Salaire brut/net',
+      contenu : 'Estimez le salaire : brut en net, net après impôt, calcul heures supplémentaires, coût total employeur',
+      bouton : 'Estimer',
+      id : 10
+    },
+    {
+      src : 'img/ico14.svg',
+      title : 'Modèles de documents',
+      contenu : 'Téléchargez et utilisez des modèles de lettres et de documents personnalisables',
+      bouton : 'Découvrir',
+      id : 11
     }
   ]
   return (
@@ -92,7 +124,7 @@ export default function Home() {
         </div>
       </Bloc2>
       <Bloc3>
-        <div className='flex pb-5'>
+        <div className='flex pb-10'>
           <div className="ligne1 modifpadding text-blue-tx">
             <h2 className='font-medium'>Thèmes</h2>
             <p className='text-lg '>
@@ -117,17 +149,42 @@ export default function Home() {
             </div>
         </div>
         </>
-        <div className='flex gap-5'>
+        <div className='flex gap-5 pb-10'>
           {
             items2.map((item2) => (
               <CardsTwo key={item2.id} src={item2.src} title={item2.title} />
             ))
           }
         </div>
-        <div>
-            <button className=''>Voir tous les thèmes</button>
+        <div className='flex justify-center pb-10'>
+            <button className='text-white bg-red-400 rounded text-lg'>Voir tous les thèmes</button>
         </div>
       </Bloc3>
+      <Bloc4 className='py-20 px-96 text-blue-tx'>
+        <div>
+          <h2 className='font-medium'>Boîte à outils</h2>
+          <p className='text-lg'>Trouvez des réponses personnalisées selon votre situation</p>
+        </div>
+        <div className='flex gap-5 py-16'>
+          {
+            items3.map((item3) => (
+              <Cards3 key={item3.id} src={item3.src} title={item3.title} contenu={item3.contenu} bouton={item3.bouton} />
+            ))
+          }
+        </div>
+        <div className='text-center'>
+          <button className='text-lg bg-red-400 rounded text-[#fff]'>Voir tous les outils</button>
+        </div>
+      </Bloc4>
+      <Bloc5Home />
+      <Bloc6 className='px-96 py-10'>
+        <h2 className='pb-8'>Sites associés</h2>
+        <div className='flex gap-36'>
+          <img src="img/1.webp" alt="" />
+          <img src="img/4.svg" alt="" />
+          <img src="img/2.svg" alt="" />
+        </div>
+      </Bloc6>
     </>
   );
 }
@@ -178,5 +235,36 @@ h2 {
 
 img {
   width : 15rem;
+}
+
+button {
+  width : 20rem;
+  height : 3rem
+}
+`
+
+const Bloc4 = styled.div`
+h2 {
+  font-size : 2rem
+}
+
+
+button {
+  width : 20rem;
+  height : 3rem
+}
+`
+
+
+const Bloc6 = styled.div`
+color : #2f3b6c;
+
+img {
+  width : 18rem;
+  height : 6rem
+}
+
+h2 {
+  font-size : 2rem;
 }
 `

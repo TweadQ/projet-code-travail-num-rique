@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Error() {
   return (
-    <div>E</div>
+    <div>
+      <p>Impossible de trouver la page</p>
+    </div>
   )
 }
